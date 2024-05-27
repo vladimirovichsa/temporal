@@ -117,6 +117,8 @@ const (
 	CLIOptDatacenter = "datacenter"
 	// CLIOptConsistency is the cli option for consistency settings
 	CLIOptConsistency = "consistency"
+	// CLIOptAuthenticator is the cli option for authenticator settings
+	CLIOptAuthenticator = "authenticator"
 	// CLIOptAddressTranslator is the cli option for address translator for Cassandra
 	CLIOptAddressTranslator = "address-translator"
 	// CLIOptAddressTranslatorOptions is the cli option for options for address translator
@@ -134,6 +136,8 @@ const (
 	CLIFlagUser = CLIOptUser + ", u"
 	// CLIFlagPassword is the cli flag for password
 	CLIFlagPassword = CLIOptPassword + ", pw"
+	// CLIFlagAuthenticator is the cli flag for authenticator
+	CLIFlagAuthenticator = CLIOptAuthenticator + ", a"
 	// CLIFlagTimeout is the cli flag for timeout
 	CLIFlagTimeout = CLIOptTimeout + ", t"
 	// CLIFlagKeyspace is the cli flag for keyspace

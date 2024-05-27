@@ -86,6 +86,12 @@ func buildCLIOptions() *cli.App {
 			Usage:  "Password used for authentication for connecting to cassandra host",
 			EnvVar: "CASSANDRA_PASSWORD",
 		},
+		cli.StringFlag{
+			Name:   schema.CLIFlagAuthenticator,
+			Value:  "",
+			Usage:  "Authenticator used for authentication for connecting to cassandra host",
+			EnvVar: "CASSANDRA_AUTHENTICATOR",
+		},
 		cli.IntFlag{
 			Name:   schema.CLIFlagTimeout,
 			Value:  defaultTimeout,
