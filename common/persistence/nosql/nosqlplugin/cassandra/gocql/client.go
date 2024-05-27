@@ -69,10 +69,13 @@ func ConfigureCassandraCluster(cfg config.Cassandra, cluster *gocql.ClusterConfi
 		cluster.Port = cfg.Port
 	}
 	if cfg.User != "" && cfg.Password != "" {
-		cluster.Authenticator = gocql.PasswordAuthenticator{
-			Username: cfg.User,
-			Password: cfg.Password,
+		authenticator := gocql.PasswordAuthenticator{
+			Username:              cfg.User,
+			Password:              cfg.Password,
+			AllowedAuthenticators: []string{},
 		}
+		authenticator.AllowedAuthenticators = append(authenticator.AllowedAuthenticators, cfg.Authenticator)
+		cluster.Authenticator = authenticator
 	}
 	if cfg.Keyspace != "" {
 		cluster.Keyspace = cfg.Keyspace

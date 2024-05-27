@@ -360,6 +360,7 @@ type (
 		DisableInitialHostLookup bool `yaml:"disableInitialHostLookup"`
 		// AddressTranslator translates Cassandra IP addresses, used for cases when IP addresses gocql driver returns are not accessible from the server
 		AddressTranslator *CassandraAddressTranslator `yaml:"addressTranslator"`
+		Authenticator     string                      `yaml:"authenticator"`
 	}
 
 	// CassandraStoreConsistency enables you to set the consistency settings for each Cassandra Persistence Store for Temporal

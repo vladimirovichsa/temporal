@@ -64,6 +64,7 @@ type (
 		TLS                      *auth.TLS
 		DisableInitialHostLookup bool
 		AddressTranslator        *config.CassandraAddressTranslator
+		Authenticator            string
 	}
 )
 
@@ -151,6 +152,7 @@ func (cfg *CQLClientConfig) toCassandraConfig() *config.Cassandra {
 		},
 		AddressTranslator: cfg.AddressTranslator,
 		ConnectTimeout:    time.Duration(cfg.Timeout) * time.Second,
+		Authenticator:     cfg.Authenticator,
 	}
 
 	return &cassandraConfig
