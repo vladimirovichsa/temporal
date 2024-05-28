@@ -180,7 +180,7 @@ func newCQLClientConfig(cli *cli.Context) (*CQLClientConfig, error) {
 		Datacenter:               cli.String(schema.CLIOptDatacenter),
 		Consistency:              cli.String(schema.CLIOptConsistency),
 		DisableInitialHostLookup: cli.GlobalBool(schema.CLIFlagDisableInitialHostLookup),
-		Authenticator:            cli.String(schema.CLIOptAuthenticator),
+		Authenticator:            cli.GlobalString(schema.CLIOptAuthenticator),
 	}
 
 	if cli.GlobalBool(schema.CLIFlagEnableTLS) {
