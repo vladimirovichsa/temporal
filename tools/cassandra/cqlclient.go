@@ -111,7 +111,7 @@ func newCQLClient(cfg *CQLClientConfig, logger log.Logger) (*cqlClient, error) {
 
 	cassandraConfig := cfg.toCassandraConfig()
 
-	logger.Info("Validating connection to cassandra cluster.")
+	logger.Info("Validating connection to cassandra cluster. " + cassandraConfig.Authenticator)
 	session, err := commongocql.NewSession(
 		func() (*gocql.ClusterConfig, error) {
 			return commongocql.NewCassandraCluster(*cassandraConfig, resolver.NewNoopResolver())
